@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form </title>
+      
+    <style> 
+        @import url(common.css); 
+        .first {
+            z-index: 1;
+            min-height: 100vh;
+            position:absolute;  
+            background:linear-gradient(to right , rgb(239, 48, 56,0.7), rgb(138, 43, 226,0.7), rgb(249, 132, 239,0.7) ,rgb(240, 226, 39,0.7));
+            width:50%;
+        }
+        .second {
+            z-index: 1;
+            height:100%;
+            position:absolute;  
+            left:50%;
+            background:linear-gradient(to  left , rgb(239, 48, 56,0.7), rgb(138, 43, 226,0.7), rgb(249, 132, 239,0.7) ,rgb(240, 226, 39,0.7));
+            width:50%;
+        }
+        .main 
+        { 
+            position:relative;
+            padding-left:12vw;
+            z-index:2;
+            margin:auto auto;
+            top:10vh;
+            background-color:#7c7c7c;
+            transform-style: preserve-3d;
+            backdrop-filter: (20px);
+            box-shadow:0 15px 35px rgba(107, 107, 107, 0.5) , 0 15px 35px rgba(82, 80, 80, 0.5);
+            min-height: 60vh;
+            width: 70%;
+            color:rgb(16, 209, 243);   
+            overflow: hidden; 
+        }
+        .topper 
+        { 
+            z-index: 3;
+            position:absolute;
+            top:22vh;
+            left:20px;
+            box-shadow:0 15px 35px rgba(107, 107, 107, 0.5) , 0 15px 35px rgba(82, 80, 80, 0.5);
+            background-color: rgb(70, 161, 177);
+            min-height:50vh;
+            width:25%;
+            overflow:hidden; 
+        }
+        .topper h2 
+        {
+            margin:10px auto;
+            font-size: 25px;
+            color:rgb(68, 68, 68); 
+            letter-spacing:2px;
+        }
+        .topper a 
+        {
+            color:rgb(68, 68, 68);
+            text-decoration: none;
+            font-size: 18px;
+            letter-spacing:1.3px;
+        }
+         .topper .address 
+        {
+            width:90%;
+            padding:0;
+            margin:6px 0;
+        } 
+        .topper .icons 
+        {
+            font-size: 30px;
+            margin: 10px;
+            margin-left:0;
+        }
+        .topper .bottom_icons 
+        {
+            position: absolute;
+            bottom:10px;
+            padding:10px 20px;
+        }
+        .topper .bottom_icons .icons1 img 
+        {
+            margin-right: 25px;
+            font-size: 40px;
+        }
+        
+        .heading h2 
+        {   
+            z-index: 2;
+            font-size: 40px;
+            letter-spacing: 2px;
+            text-align: center;
+            width:100%;
+            margin-bottom: 10px;
+        }
+        
+        .form_in 
+        {
+            position:relative;
+            z-index: 2;
+            width:90%;
+            padding:40px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 60px 60px 130px 60px;  
+            grid-template-areas: "first_name last_name " 
+                                "email tel_number " 
+                                "message message "
+                                "btn .";   
+            row-gap: 40px;
+            column-gap: 20px;
+        }
+        .form_in .first_name 
+        { 
+            position:relative;
+            grid-area:first_name; 
+        }
+        .form_in .last_name 
+        { 
+            position:relative;
+            grid-area:last_name; 
+        }
+        .form_in .email
+        { 
+            position:relative;
+            grid-area:email; 
+        }
+        .form_in .tel_number
+        { 
+            position:relative;
+            grid-area:tel_number; 
+        }
+        .form_in .message 
+        { 
+            position:relative;
+            grid-area:message; 
+        }
+        .form_in .btn 
+        { 
+            position:relative;
+            grid-area:btn; 
+            font-size: 25px;
+            height:45px;
+            width:120px;
+            background-color: rgb(16, 209, 243);
+            border:1px solid rgb(141, 140, 140);
+            outline:none; 
+            cursor: pointer;
+            border-radius: 8px;
+            letter-spacing:2px;
+            box-shadow:0 2px 5px rgb(80, 77, 77), 0 5px 10px rgb(94, 92, 92);
+        }
+        .form_in .btn:active 
+        { 
+            box-shadow:0 5px 8px rgb(80, 77, 77), 0 10px 15px rgb(94, 92, 92);
+            transform:translate(2px, 4px);
+        }
+
+        .form_in .naming  
+        {
+            position:absolute;
+            left:0; 
+            bottom:5px;
+            font-size: 20px;
+            margin-bottom:0;
+            letter-spacing:1.4px;
+            color:black;
+        }
+        .form_in .txt   
+        {
+          position: relative;
+          display:none;
+          height:100%;  
+          width:100%;
+          font-size: 20px;
+          padding:5px 20px;
+          letter-spacing:1.4px;
+          outline:none;         
+          border:none;
+          background-color: white;
+          transition:all 0.4s;
+          box-shadow:0 2px 5px rgb(80, 77, 77), 0 5px 10px rgb(94, 92, 92);
+        }
+        .form_in .up:hover .naming 
+        {   
+            left:0; 
+            top:0;
+            transform:translate(-10px, -25px);
+            transition:all 0.3s ;            
+        }
+        .form_in .up:hover .txt
+        {
+            display:block;
+            transition:all 0.4s ;
+        }
+
+        .form_in .line  
+        {   
+            position:absolute;
+            bottom:0;
+            width: 100%;
+            background-color: rgb(16, 209, 243);
+            height:3px;
+            margin-top:-2px;
+        } 
+ 
+    @media only screen and (max-width:1000px)
+    {
+        .form_in  
+        {
+            
+            grid-template-columns: 1fr;
+            grid-template-rows: 60px 60px 60px 60px 130px 60px;
+            grid-template-areas: "first_name"
+                                 "last_name"
+                                 "email"
+                                 "tel_number"
+                                 "message"
+                                 "btn";
+        }
+
+        .first 
+        { 
+            height:120vh;
+        }
+        .second 
+        { 
+            height:120vh;
+        }
+    }
+    </style>    
+</head>
+<body>
+    <div class="first"></div>
+        <div class="second"></div>
+
+        <div class="topper flex flex-column align-center">
+            <h2>Contact Info</h2> 
+            <div class="address flex align-center">
+                <span class="icons" ><img src="/Oline Tutorial/Images/icons/home.svg"></span>
+                <a href="#">2928 Meadowbrook Road Los Angoios, CA </a>
+            </div>
+
+            <div class="address flex align-center ">
+                <span class="icons" ><img src="/Oline Tutorial/Images/icons/mail.svg"></span>
+                <a href="#">amit@gmail.com</a>
+            </div>
+
+            <div class="address flex align-center ">
+                <span class="icons" ><img src="/Oline Tutorial/Images/icons/call.svg"></span>
+                <a href="#">9352109021</a>
+            </div>
+
+            <div class="bottom_icons flex align-center justify-center">
+                <span class="icons1" ><img src="/Oline Tutorial/Images/icons/fb.svg"></span>
+                <span class="icons1" ><img src="/Oline Tutorial/Images/icons/download.svg"></span>
+                <span class="icons1" ><img src="/Oline Tutorial/Images/icons/calendar.svg"></span>
+                <span class="icons1" ><img src="/Oline Tutorial/Images/icons/bookmark.svg"></span>
+            </div>
+        </div>
+
+
+        <div class=" main flex align-center justify-center flex-column">
+
+            <div class="heading">
+                <h2>Creative Contact Us Form </h2>
+            </div>
+
+            <div class="form_in">
+                    <div class=" up first_name flex flex-column ">                       
+                        <input type="text" name="" required="required" class="txt">
+                        <span class="naming">First Name</span> 
+                        <span class="line"></span>
+                    </div>
+
+                    <div class=" up last_name flex flex-column">
+                        <span class="naming">Last Name</span> 
+                        <input type="text" name="" required="required" class="txt">
+                        <span class="line"></span>
+                    </div>
+
+                    <div class=" up email flex flex-column">
+                        <span class="naming">Email</span> 
+                        <input type="text" name="" required="required" class="txt">
+                        <span class="line"></span>
+                    </div>
+
+                    <div class=" up tel_number flex flex-column">
+                        <span class="naming">Phone number</span> 
+                        <input type="text" name="" required="required" class="txt">
+                        <span class="line"></span>
+                    </div>
+
+                    <div class=" up message flex flex-column">
+                        <span class="naming">Type Your Message Here....</span> 
+                        <textarea name="" required="required" class=" txt last_txt"></textarea>
+                        <span class="line"></span>
+                    </div>
+
+                    <input type="submit" class="btn" value="Send">
+            </div>
+
+
+    </div>
+</body>
+</html>

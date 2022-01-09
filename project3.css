@@ -1,0 +1,103 @@
+* 
+   {
+       padding: 0;
+       margin: 0;
+       box-sizing: border-box;
+   }
+
+ body 
+    {        
+        font-family: sans-serif;
+        background-image: url('statue\ of\ liberty.jpg');
+        background-size: cover;
+
+    } 
+
+header 
+   {
+       
+       margin:1vh 10vw;
+       height:6vh;
+       background-color: rgb(44, 46, 44,0.8);
+       color:rgb(255, 255, 255);
+       text-align: center;
+       border-radius: 20px;
+   }
+      
+.header-ul
+   {
+       display: inline-flex;
+       list-style-type: none;
+       padding:0px;
+   }
+
+.header-ul li 
+    {    
+        list-style-type: none;
+        margin:0 5px;
+        line-height:44px;
+        height:44px;
+        width:140px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+.header-ul li a 
+    {
+        color:white;
+        text-decoration: none;
+    }
+    .fas 
+    {
+        margin-right:4px;
+    }
+ .header-ul li:hover 
+   {
+       background-color:rgb(0, 128, 0); 
+       border-radius: 3px;
+   }
+
+.sub-menu li
+    {
+          margin:0;
+          
+    }                             
+
+.sub-menu 
+     {
+         display: none;
+     }
+
+.header-ul li:hover .sub-menu
+     {
+         display: block;
+         background-color: rgb(44, 46, 44,0.8);
+         margin-top: 0;
+         border:none;
+         outline:none;
+         
+     }
+
+.header-ul li:hover .sub-menu
+     {
+         display: block;
+         
+         
+     }
+
+.next-submenu
+     {
+         display: none;
+     }
+
+.sub-menu li.last-menu:hover .next-submenu
+     {
+         display: block;
+         background-color: rgb(44, 46, 44,0.8);
+         margin-top: 0;
+         border:none;
+         outline:none;
+         position:absolute;
+         margin-left:140px;
+         margin-top:-44px;
+     }

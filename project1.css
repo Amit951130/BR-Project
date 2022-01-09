@@ -1,0 +1,141 @@
+* 
+            {
+                 padding: 0;
+                 margin: 0;
+            }
+.bcimage  
+    {
+        background-color: rgb(145, 255, 0);
+        background-image: url('bc.jpg');
+        background-repeat: no-repeat;
+        background-size:cover;        
+        height:100vh; 
+        box-shadow:0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+        position:relative;
+    }
+.main 
+           {
+            color:white;   
+            position:absolute;
+            text-align: center;
+            left:50%;
+            top:50%; 
+            transform: translate(-50%, -50%);  /* apne apne height or width ko consider karta h */
+            font-family: 'Stint Ultra Condensed', cursive;
+           }
+.main h2 
+        {
+            font-size: 2.8rem;
+            text-align: center;
+        }
+.main p 
+     {
+          font-size:1.4rem;
+          text-align: center;
+     }
+.form  
+    {
+        margin-top: 4px;
+    }
+.text  
+        {     display: block;
+              margin:0 auto 8px auto;
+              padding:.5rem;
+              width:80%;
+              border:none;
+              border-radius: 0.8rem;
+              text-align: center;
+              outline:none;
+
+        }
+.submit 
+        {
+               display:inline-block;
+               margin:8px auto;
+               padding:.5rem;
+               width:20%;
+               border-radius: .3rem;
+               border:none;
+               outline:none;
+               background-color: #00bab1;
+               color:white;
+               box-shadow: 0 5px rgb(49, 47, 47);
+               cursor:pointer;
+        }
+.submit:active 
+        {
+             background-color: #04fff2;
+             box-shadow: 0 5px #666;
+             transform: translateY(5px);
+        }
+.main span 
+        {
+                font-size:1.4rem ;
+                display: inline-block;
+                margin-left:-70%;
+        }
+
+/* .product 
+        {
+            height: 70vh;
+            background-color: red;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            object-fit: cover;
+        }         */
+.product 
+
+       {
+           margin-right: 0;
+           margin-top: 5px;
+           display: flex;
+           justify-content: space-around;
+           flex-wrap:nowrap;
+       }
+.list_item1
+        {
+            display:inline-block;
+            width:30%;
+            box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+            padding:4px;
+        }
+        .list_item2
+        {
+            display:inline-block;
+            width:30%;
+            box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+            padding:4px;
+        }
+        .list_item3
+        {
+            display:inline-block;
+            width:30%;
+            box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+            padding:4px;           
+        }
+@media only screen and (max-width:600px)
+  {
+       .product  
+          {
+               flex-direction: column;
+          }
+          .list_item1
+          {
+              display:inline-block;
+              width:100%;
+              margin:4px 0;
+          }
+          .list_item2
+          {
+              display:inline-block;
+              width:100%;
+              margin:4px 0;
+          }
+          .list_item3
+          {
+              display:inline-block;
+              width:100%;  
+              margin:4px 0;            
+          }
+  }
